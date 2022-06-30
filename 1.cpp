@@ -54,7 +54,12 @@ void separate(string str) {
 
 
 int main() {
-    string str = "Md. Tareq Zaman, Part-3,2011";
+    // string str = "Md. Tareq Zaman, Part-3,2011";
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    string str;
+    // cin>>str;
+    getline(cin,str);
     cout << str << endl;
 
     count(str);

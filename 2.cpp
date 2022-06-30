@@ -84,7 +84,13 @@ void word_start_with_vowel(string str) {
 }
 
 int main() {
-    string str = "Munmun is the student of Computer Science & Engineering";
+
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+
+    // string str = "Munmun is the student of Computer Science & Engineering";
+    string str;
+    getline(cin,str);
     cout << str << endl;
 
     count_vowel_and_consonant(str);
