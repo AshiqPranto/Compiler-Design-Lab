@@ -1,1 +1,1 @@
-Float Number
+Binary Number
