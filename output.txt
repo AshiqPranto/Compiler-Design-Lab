@@ -1,1 +1,8 @@
-Invalid
+Sagor is a
+Number of words is = 3
+Number of letter is = 8
+Number of digit is = 0
+Number of other Characters is = 2
+All Characters: Sagorisaø©¬„§
+All digit: »Ì¹V
+All other characters:   Ì¹V

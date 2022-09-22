@@ -29,7 +29,7 @@ bool isKeyword(string str)
     return false;
 }
 
-bool isArithmetic(string str)
+    bool isArithmetic(string str)
 {
     if(str=="+" || str=="-" || str=="*" || str=="/") return true;
     return false;
