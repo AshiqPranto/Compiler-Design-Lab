@@ -59,13 +59,19 @@ int main()
             vector<string> temp = calculateFirst(i);
             printf("First(%c) => {",i);
             cout<<temp[0];
-            for(int i= 1;i<temp.size();i++) cout<<", "<<temp[i];
+            first[i].push_back(temp[0]);
+            for(int j= 1;j<temp.size();j++)
+            {
+                first[i].push_back(temp[j]);
+                cout<<", "<<temp[j];
+            }
             cout<<"}"<<endl;
         }
     }
     // jar follow ber korbo tar por jodi kichu na thake tahole follow hobe index er follow.
     // jar follow ber korbo tar por jodi non terminal thake tahole follow hobe oi non terminal er first.
     // follow set e kokhono epsilon hobe na && start symbol er follow set suru tei $ sign hobe.
+    
     
 
 
