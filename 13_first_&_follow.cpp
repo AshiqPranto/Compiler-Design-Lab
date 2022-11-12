@@ -102,6 +102,25 @@ set<string> calculateFollow(char f)
 
 int main()
 {
+
+/*
+input should be given in a specific format like below
+E -> TR
+R -> +TR
+R -> #
+T -> FY
+Y -> *FY
+Y -> #
+F -> (E)
+F -> i
+N.B: one single space before and after implies sign.
+
+->  # used to denote epsilon
+->  terminal and non-terminal both should be single character
+    otherwise this code will not work.
+    e.g. T` or F`(F with prime) will not work.
+*/    
+
     freopen("input.txt","r",stdin);
     // freopen("output.txt","w",stdout);
 
@@ -142,6 +161,7 @@ int main()
             cout<<"}"<<endl;
         }
     }
+    printf("-----------------------------------------------\n");
     // jar follow ber korbo tar por jodi kichu na thake tahole follow hobe index er follow.
     // jar follow ber korbo tar por jodi non terminal thake tahole follow hobe oi non terminal er first.
     // follow set e kokhono epsilon hobe na && start symbol er follow set suru tei $ sign hobe.
@@ -163,4 +183,5 @@ int main()
             cout<<"}"<<endl;
         }
     }
+
 }
