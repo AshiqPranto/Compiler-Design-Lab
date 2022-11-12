@@ -1,1 +1,8 @@
-Sagor is a
+E -> TR
+R -> +TR
+R -> #
+T -> FY
+Y -> *FY
+Y -> #
+F -> (E)
+F -> i

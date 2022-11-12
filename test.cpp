@@ -75,10 +75,23 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
  
 void eff()
 {
-    int a = 'A';
-    char c = 65;
-    printf("%c",65);
-    // cout<<c;
+    vector<set<string>> a(10);
+    a[1].insert("a11");
+    a[1].insert("a12");
+    a[1].insert("a13");
+    a[2].insert("a21");
+    a[2].insert("a22");
+    a[2].insert("a23");
+
+    for(auto x:a)
+    {
+        for(auto y : x)
+        {
+            cout<<y<<", ";
+        }
+        cout<<endl;
+    }
+
 }
  
 int main()
@@ -94,3 +107,7 @@ int main()
     }
     return 0;
 }
+
+F -> T -> R -> 
+
+
