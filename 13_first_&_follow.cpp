@@ -27,26 +27,51 @@ set<string> calculateFirst(char f)
     for(int i = 0;i<inp[f].size();i++)
     {
         store = inp[f][i];
-        if(isCapital(store[0]))
+
+        bool getEpsilon = false;
+        int j = 0;
+        do
         {
-            temp = calculateFirst(store[0]);
-            for(auto j : temp)
+            getEpsilon = false;
+            if(isCapital(store[j]))
             {
-                ans.insert(j);
+                temp = calculateFirst(store[j]);
+                for(auto x : temp)
+                {
+                    if(x == "#") getEpsilon = true;
+                    ans.insert(x);
+                }
             }
-        }
-        else{
-            string temp1;
-            temp1 += store[0];
-            ans.insert(temp1);
-        }
+            else{
+                string temp1;
+                temp1 += store[j];
+                ans.insert(temp1);
+            } 
+            j++;
+        } while (getEpsilon && j < inp[f].size());
+        // if(isCapital(store[0]))
+        // {
+        //     temp = calculateFirst(store[0]);
+        //     for(auto j : temp)
+        //     {
+        //         ans.insert(j);
+        //     }
+        // }
+        // else{
+        //     string temp1;
+        //     temp1 += store[0];
+        //     ans.insert(temp1);
+        // }
+        
+
+
     }
     dpFirst[f] = true;
     for(auto x : ans)
     {
         first[f].insert(x);
     }
-    return ans;
+    return first[f];
 }
 set<string> calculateFollow(char f)
 {
@@ -97,7 +122,7 @@ set<string> calculateFollow(char f)
         fol[f].insert(x);
     }
     dpSecond[f] = true;
-    return tempSet;
+    return fol[f];
 }
 
 int main()
@@ -122,7 +147,7 @@ N.B: one single space before and after implies sign.
 */    
 
     freopen("input.txt","r",stdin);
-    // freopen("output.txt","w",stdout);
+    freopen("output.txt","w",stdout);
 
     memset(dpFirst,false,sizeof(dpFirst));
     memset(dpSecond,false,sizeof(dpSecond));
@@ -166,7 +191,7 @@ N.B: one single space before and after implies sign.
     // jar follow ber korbo tar por jodi non terminal thake tahole follow hobe oi non terminal er first.
     // follow set e kokhono epsilon hobe na && start symbol er follow set suru tei $ sign hobe.
     // cout<<"no"<<endl;
-    cout<<"start = "<<start<<endl;
+    // cout<<"start = "<<start<<endl;
     fol[start].insert("$");
     for(int i = 'A';i<='Z';i++)
     {
