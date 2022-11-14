@@ -1,6 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+bool isBinaryNumber(string str)
+{
+    int size = str.size();
+
+    if (size < 2)
+        return false;
+
+    if (str[0] != '0')
+    {
+        return false;
+    }
+
+    if (str[1] != '0' && str[1] != '1')
+    {
+        return false;
+    }
+
+    // Check
+    bool isOK = true;
+
+    for (int i = 2; i < str.size(); i++)
+    {
+        if (str[i] != '1' && str[i] != '0')
+        {
+            isOK = false;
+            break;
+        }
+    }
+    return isOK;
+}
+
 bool isCharacter(char c)
 {
     if((c>='a' && c<='z') || (c>='A' && c<='Z'))
@@ -48,7 +79,7 @@ int main()
     {
         cout<<"Binary variable\n";
     }
-    else if(str[0]=='0' && (str[1]=='0' || str[1]=='1') )
+    else if(isBinaryNumber(str))
     {
         cout<<"Binary Number\n";
     }
