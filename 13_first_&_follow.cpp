@@ -42,7 +42,7 @@ set<string> calculateFirst(char f)
                     // cout<<"temp = "<<x<<endl;
                     if(x == "#")
                     {
-                        if(j == store.size()-1)
+                        if(j == (store.size()-1))
                          ans.insert(x);
                         getEpsilon = true;
 
@@ -151,7 +151,7 @@ N.B: one single space before and after implies sign.
 ->  terminal and non-terminal both should be single character
     otherwise this code will not work.
     e.g. T` or F`(F with prime) will not work.
-*/    
+*/
 
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
@@ -217,3 +217,28 @@ N.B: one single space before and after implies sign.
     }
 
 }
+/*
+Another input output to check
+
+Grammar:
+S -> ACB
+S -> CbB
+S -> Ba
+A -> da
+A -> BC
+B -> g
+B -> #
+C -> h
+C -> #
+FIRST:
+First(A) => {#, d, g, h, }
+First(B) => {#, g, }
+First(C) => {#, h, }
+First(S) => {#, a, b, d, g, h, }
+-----------------------------------------------
+Follow(A) => {$, g, h, }
+Follow(B) => {$, a, g, h, }
+Follow(C) => {$, b, g, h, }
+Follow(S) => {$, }
+
+*/
