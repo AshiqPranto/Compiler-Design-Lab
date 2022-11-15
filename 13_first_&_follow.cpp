@@ -36,10 +36,19 @@ set<string> calculateFirst(char f)
             if(isCapital(store[j]))
             {
                 temp = calculateFirst(store[j]);
+                // cout<<"check : "<<f<<endl;
                 for(auto x : temp)
                 {
-                    if(x == "#") getEpsilon = true;
-                    ans.insert(x);
+                    // cout<<"temp = "<<x<<endl;
+                    if(x == "#")
+                    {
+                        if(j == store.size()-1)
+                         ans.insert(x);
+                        getEpsilon = true;
+
+                    }else{
+                        ans.insert(x);
+                    }
                 }
             }
             else{
@@ -48,7 +57,7 @@ set<string> calculateFirst(char f)
                 ans.insert(temp1);
             } 
             j++;
-        } while (getEpsilon && j < inp[f].size());
+        } while (getEpsilon && j < inp[f][i].size());
         // if(isCapital(store[0]))
         // {
         //     temp = calculateFirst(store[0]);
@@ -63,8 +72,6 @@ set<string> calculateFirst(char f)
         //     ans.insert(temp1);
         // }
         
-
-
     }
     dpFirst[f] = true;
     for(auto x : ans)
