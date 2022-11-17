@@ -109,12 +109,18 @@ set<string> calculateFollow(char f)
                             }else{
                                 tempSet1 = calculateFirst(temp[l]);
                             }
-                            for(auto x : tempSet1)
+                            for(string x : tempSet1)
                             {
                                 if(x=="#")
                                     getepsilon = true;
-                                else
+                                else if(x[0] != '\0')
+                                {
+                                    // if(f == 'F')
+                                    // {
+                                    //     cout<<"check -> "<<x<<endl;
+                                    // }
                                     tempSet.insert(x);
+                                }
                             }
                         } while (getepsilon && l<= temp.size());
                         break;

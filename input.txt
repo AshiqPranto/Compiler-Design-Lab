@@ -1,8 +1,8 @@
 E -> TR
 R -> +TR
-R -> #
 T -> FY
 Y -> *FY
-Y -> #
 F -> (E)
+R -> #
+Y -> #
 F -> i
